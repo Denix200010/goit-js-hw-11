@@ -1,0 +1,38 @@
+body{
+    background: #F5F4FA;
+    
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.gallery{
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.photo-card{
+    background-color: #fff;
+    box-shadow: #F5F4FA;
+    height: 100%;
+    margin: 20px;
+    width: 300px;
+}
+img{
+    width: 100%;
+    height: 310px;
+}
+.info{
+    margin: 10px;
+    gap: 5px;
+    display: flex;
+}
+.load-more{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hidden{
+    display: none;
+}
