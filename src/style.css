@@ -2,6 +2,9 @@ body{
     background: #F5F4FA;
     
 }
+button{
+    cursor: pointer;
+}
 a{
     text-decoration: none;
     color: black;

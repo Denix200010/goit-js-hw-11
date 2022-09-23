@@ -42,9 +42,9 @@ function onFormSubmit(e) {
         captionDelay: 250,
     }).refresh();
         Notify.success(`Hooray! We found ${resp.data.totalHits} images.`)
-        if (resp.data.totalHits > step) {
-        btnLoadMoreRef.classList.remove('hidden');
-        }})
+            if (resp.data.totalHits > step) {
+            btnLoadMoreRef.classList.remove('hidden');
+            }})
         .catch(error => console.log(error))
         .finally(() => formRef.reset())
     
@@ -60,7 +60,11 @@ function onMoreBtnClick() {
         captionType: "alt",
         captionsData: "alt",
         captionDelay: 250,
-    }).refresh();
+            }).refresh();
+            if ((resp.data.totalHits / step) < page) {
+                Notify.failure("We're sorry, but you've reached the end of search results.")
+                btnLoadMoreRef.classList.add('hidden');
+        }
         })
         .catch(error => console.log(error));
 }
