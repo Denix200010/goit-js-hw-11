@@ -61,10 +61,11 @@ function onMoreBtnClick() {
         captionsData: "alt",
         captionDelay: 250,
             }).refresh();
-            const totalPic = Math.ceil(resp.data.totalHits / step)
-            if (totalPic < page) {
-                Notify.failure("We're sorry, but you've reached the end of search results.")
+            const totalPic = Math.ceil(resp.data.totalHits / step);
+            if (totalPic <= page) {
                 btnLoadMoreRef.classList.add('hidden');
+                Notify.failure("We're sorry, but you've reached the end of search results.")
+                
         }
         })
         .catch(error => console.log(error));
